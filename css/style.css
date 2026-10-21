@@ -501,3 +501,5 @@ i{font-variant-emoji:text}
 .lgt-band:hover{border-color:var(--ink)}
 .lgt-band:hover .lgt-cta{gap:20px;color:var(--accent)}
 @media(max-width:899px){.lgt-band{flex-wrap:wrap}.lgt-t{flex-basis:100%;order:4}.lgt-cta{order:2}}
+/* isolate the "نسختين" label so it never joins (shapes) with the last letter of the name */
+.lg-c b small{display:inline-block}
