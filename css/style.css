@@ -533,3 +533,7 @@ i{font-variant-emoji:text}
 .pv-anim,.pv-pat{overflow:hidden;contain:paint;-webkit-transform:translateZ(0);isolation:isolate}
 .pv-pat svg,.pv-anim svg{overflow:hidden;max-width:100%}
 html,body{overflow-x:clip}
+
+/* Arabic must never be letter-spaced (it breaks the joined letters) */
+.pv-meta dt.label,.pv-nt .label,.pv-next .label{letter-spacing:0;text-transform:none;font-size:13px}
+.hero .label.scroll,a.scroll.label{letter-spacing:0;text-transform:none}
