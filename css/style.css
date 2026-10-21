@@ -7,7 +7,7 @@
   --accent:#d8c3a0;
   --ar:"Ghroob",sans-serif;
   --lat:"Ghroob",sans-serif;
-  --pad:clamp(20px,7vw,140px);
+  --pad:max(clamp(20px,7vw,140px),calc((100vw - 1760px) / 2));
   --ease:cubic-bezier(.2,.7,.2,1);
 }
 *{box-sizing:border-box;margin:0;padding:0}
