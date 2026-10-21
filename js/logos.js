@@ -21,13 +21,17 @@ var B=window.LOGOS||[],flat=[],start=[];
    L = long+square, R = square+long, C = 3 squares, W = one wide card, A = tall card + 4 squares, B = 4 squares + tall card */
 var BLOCKS=["L","C","A","W","R","C","B","W"],NEED={L:2,R:2,C:3,W:1,A:5,B:5},pos=[];
 (function(){
-  var i=0,r=1,n=B.length,bi=0;
+  var i=0,r=1,n=B.length,bi=0,nonS=0,PL=B.filter(function(b){return !b.sq}).length;
   function add(c,rr,cs,rs,k){pos.push({c:c,r:rr,cs:cs,rs:rs,k:k})}
   while(i<n){
     var t=BLOCKS[bi%BLOCKS.length],left=n-i;
     if(left<NEED[t])t=left>=3?"C":left===2?"L":"W";
     if(t==="W"&&left===2)t="L";
-    if(t==="L"){add(1,r,2,1,"L");add(3,r,1,1,"S");r++}
+    /* never plan more wide/long/tall cards than there are plain-background brands to fill them */
+    if(t!=="C"&&nonS>=PL)t=left>=3?"C":"Q";
+    if(t!=="C")nonS++;
+    if(t==="Q"){for(var q=0;q<left;q++)add(q+1,r,1,1,"S");r++;NEED.Q=left}
+    else if(t==="L"){add(1,r,2,1,"L");add(3,r,1,1,"S");r++}
     else if(t==="R"){add(1,r,1,1,"S");add(2,r,2,1,"R");r++}
     else if(t==="C"){add(1,r,1,1,"S");add(2,r,1,1,"S");add(3,r,1,1,"S");r++}
     else if(t==="W"){add(1,r,3,1,"W");r++}
