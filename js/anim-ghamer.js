@@ -8,7 +8,9 @@ window.ANIM_RUN=function(root){
   var lines=q(".gm-ln"),gh=q(".gm-gh"),L=q(".gm-l");
   var tl=gsap.timeline({paused:true,defaults:{overflow:"visible"},onComplete:function(){el.classList.add("done")}});
   /* camera: a slow push-in that settles over the whole scene */
-  tl.fromTo(el.querySelector(".gm-cam"),{scale:1.07,svgOrigin:"960 540"},{scale:1,svgOrigin:"960 540",duration:7,ease:"power2.out"},0);
+  tl.fromTo(el.querySelector(".gm-cam"),{scale:1.1,svgOrigin:"960 540"},{scale:1,svgOrigin:"960 540",duration:8,ease:"power3.out"},0);
+  /* 3D camera settles from a tilted angle, like the reference reel */
+  tl.fromTo(el.querySelector(".gm-svg"),{rotationX:16,rotationY:-12,y:30,transformOrigin:"50% 50%"},{rotationX:0,rotationY:0,y:0,duration:5.2,ease:"expo.out"},0);
   /* construction lines draw from the centre outward */
   lines.forEach(function(l,i){tl.fromTo(l,{strokeDashoffset:1,opacity:.55},{strokeDashoffset:0,duration:1.9,ease:"expo.inOut"},0.1+i*0.07)});
   /* figure */
@@ -16,20 +18,26 @@ window.ANIM_RUN=function(root){
   tl.fromTo(".gm-head",{y:-70,scale:.5,opacity:0,transformOrigin:"50% 50%"},{y:0,scale:1,opacity:1,duration:1.5,ease:"expo.out"},0.95);
   /* the arrow climbs the stairs in one continuous glide, leaving after-images */
   var a=el.querySelector(".gm-arrow"),T0=1.75,TC=2.0,top=O[7],ez=gsap.parseEase("power2.inOut");
-  tl.fromTo(a,{x:O[0][0],y:O[0][1],opacity:0},{opacity:1,duration:.5,ease:"power1.out"},T0-.45);
+  tl.fromTo(a,{x:O[0][0],y:O[0][1],opacity:0,filter:"drop-shadow(0 0 30px rgba(194,34,63,.95))"},{opacity:1,duration:.5,ease:"power1.out"},T0-.45);
   tl.to(a,{x:top[0],y:top[1],duration:TC,ease:"power2.inOut"},T0);
   function arrive(p){var lo=0,hi=1;for(var i=0;i<24;i++){var m=(lo+hi)/2;ez(m)<p?lo=m:hi=m}return lo*TC}
   gh.forEach(function(g){var k=+g.getAttribute("data-k"),d=O[k],t=T0+arrive(k/7)-.12;
     tl.fromTo(g,{opacity:0,x:-18,y:18},{opacity:1,x:0,y:0,duration:1.1,ease:"power3.out"},Math.max(.3,t))});
   /* …and glides back down to land in the figure's hand */
   tl.to(a,{x:0,y:0,duration:1.5,ease:"power3.inOut"},T0+TC+.15);
+  tl.to(a,{filter:"drop-shadow(0 0 14px rgba(194,34,63,.35))",duration:1.8,ease:"power2.out"},T0+TC+.9);
   /* wordmark — letters rise out of a mask, the Arabic wipes in right-to-left */
   var W=T0+TC+.45;
   tl.fromTo(L,{y:105,opacity:0},{y:0,opacity:1,duration:1.3,ease:"expo.out",stagger:.07},W);
   tl.fromTo(".gm-car",{attr:{x:1066,width:0}},{attr:{x:636,width:432},duration:1.5,ease:"power3.inOut"},W+.15);
   tl.fromTo(".gm-ar",{x:36},{x:0,duration:1.6,ease:"power3.out"},W+.15);
   /* lines settle back */
-  tl.to(lines,{opacity:.3,duration:1.6,ease:"power2.inOut"},W+.5);
+  tl.to(lines,{opacity:.1,duration:1.6,ease:"power2.inOut"},W+.5);
+  /* a light sweep runs across the finished lock-up */
+  var sh=q(".gm-body,.gm-head,.gm-l,.gm-ar path,.gm-ar ellipse");
+  sh.sort(function(x,y){return x.getBoundingClientRect().left-y.getBoundingClientRect().left});
+  tl.to(sh,{fill:"#ffffff",duration:.35,ease:"power2.out",stagger:{each:.035}},W+1.6);
+  tl.to(sh,{fill:"#d9d4cb",duration:.9,ease:"power2.inOut",stagger:{each:.035}},W+1.95);
   /* start state */
   tl.progress(0);
   function play(){el.classList.remove("done");tl.restart()}

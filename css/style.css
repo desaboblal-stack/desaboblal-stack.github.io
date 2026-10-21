@@ -464,11 +464,11 @@ i{font-variant-emoji:text}
 @media(max-width:899px){.nav .cta,.nav .lang{box-sizing:border-box;width:90px;min-width:90px;height:38px;padding:0 10px;display:inline-flex;align-items:center;justify-content:center;gap:7px;white-space:nowrap}}
 @media(max-width:699px){.hero .label#hl{display:none}}
 
-.pv-anim{position:relative;margin-inline:auto;width:min(100%,1500px);aspect-ratio:16/9;background:#fff;border-radius:18px;overflow:hidden;cursor:pointer;margin-bottom:clamp(10px,1.4vw,20px);-webkit-tap-highlight-color:transparent}
-.pv-anim .gm-svg{position:absolute;inset:0;width:100%;height:100%;display:block}
-.gm-grid line{stroke:#9a9a9a;stroke-width:1;vector-effect:non-scaling-stroke;stroke-dasharray:1;stroke-dashoffset:0;opacity:.3}
-.gm-gh{fill:#aaa;fill-opacity:.2}
-.gm-body,.gm-head,.gm-l,.gm-ar *{fill:#aaa}
-.gm-arrow{fill:#912037}
-.gm-hint{position:absolute;inset-inline-end:14px;bottom:10px;font:500 11px/1 var(--lat);letter-spacing:.14em;color:#999;opacity:0;transition:opacity .5s;pointer-events:none}
+.pv-anim{position:relative;margin-inline:auto;width:min(100%,1500px);aspect-ratio:16/9;background:radial-gradient(ellipse at 50% 46%,#1c1a1b 0%,#0d0d0d 62%,#070707 100%);border-radius:18px;overflow:hidden;cursor:pointer;margin-bottom:clamp(10px,1.4vw,20px);-webkit-tap-highlight-color:transparent;perspective:1600px}
+.pv-anim .gm-svg{position:absolute;inset:0;width:100%;height:100%;display:block;transform-style:preserve-3d;will-change:transform}
+.gm-grid line{stroke:#fff;stroke-width:1;vector-effect:non-scaling-stroke;stroke-dasharray:1;stroke-dashoffset:0;opacity:.1}
+.gm-gh{fill:#fff;fill-opacity:.07}
+.gm-body,.gm-head,.gm-l,.gm-ar *{fill:#d9d4cb}
+.gm-arrow{fill:#c2223f;filter:drop-shadow(0 0 14px rgba(194,34,63,.35))}
+.gm-hint{position:absolute;inset-inline-end:14px;bottom:10px;font:500 11px/1 var(--lat);letter-spacing:.14em;color:#8a857d;opacity:0;transition:opacity .5s;pointer-events:none}
 .pv-anim.done .gm-hint{opacity:1}
