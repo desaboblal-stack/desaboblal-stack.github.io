@@ -463,3 +463,31 @@ i{font-variant-emoji:text}
 /* mobile header: equal-width pills so both sit the same distance from the center logo; hide hero tagline on phones */
 @media(max-width:899px){.nav .cta,.nav .lang{box-sizing:border-box;width:90px;min-width:90px;height:38px;padding:0 10px;display:inline-flex;align-items:center;justify-content:center;gap:7px;white-space:nowrap}}
 @media(max-width:699px){.hero .label#hl{display:none}}
+
+.pv-anim{position:relative;margin-inline:auto;width:min(100%,1500px);aspect-ratio:16/9;background:#fff;border-radius:18px;overflow:hidden;cursor:pointer;margin-bottom:clamp(10px,1.4vw,20px)}
+.pv-anim .gm-svg{position:absolute;inset:0;width:100%;height:100%;display:block}
+.gm-grid line{stroke:#9a9a9a;stroke-width:1;vector-effect:non-scaling-stroke;opacity:.55;stroke-dasharray:1;stroke-dashoffset:1}
+.gm-gh{fill:#aaa;fill-opacity:0}
+.gm-body,.gm-head,.gm-l,.gm-ar *{fill:#aaa}
+.gm-arrow{fill:#912037;opacity:0}
+.gm-fig{opacity:0}.gm-l{opacity:0}.gm-ar{opacity:0}
+.gm-hint{position:absolute;inset-inline-end:14px;bottom:10px;font:500 11px/1 var(--lat);letter-spacing:.14em;color:#999;opacity:0;transition:opacity .4s;pointer-events:none}
+.pv-anim.done .gm-hint{opacity:1}
+.pv-anim.play .gm-ln,.pv-anim.play .gm-grid line{animation:gm-draw 1.3s var(--ease,cubic-bezier(.22,1,.36,1)) var(--d) forwards}
+.pv-anim.play .gm-grid{animation:gm-gfade 1s ease 4.98s forwards}
+.pv-anim.play .gm-fig{animation:gm-fig .9s var(--ease,cubic-bezier(.22,1,.36,1)) .5s forwards}
+.pv-anim.play .gm-head{transform-box:fill-box;transform-origin:50% 100%;animation:gm-pop .7s cubic-bezier(.3,1.6,.5,1) .9s both}
+.pv-anim.play .gm-gh{animation:gm-gh .5s ease var(--d) forwards}
+.pv-anim.play .gm-arrow{animation:gm-arrow 3.43s linear 1.55s forwards}
+.pv-anim.play .gm-l{animation:gm-up .7s var(--ease,cubic-bezier(.22,1,.36,1)) var(--d) forwards}
+.pv-anim.play .gm-ar{animation:gm-wipe 1s var(--ease,cubic-bezier(.22,1,.36,1)) var(--d) forwards}
+.pv-anim.static .gm-grid line{stroke-dashoffset:0;opacity:.3}.pv-anim.static .gm-gh{fill-opacity:.2}.pv-anim.static .gm-fig,.pv-anim.static .gm-l,.pv-anim.static .gm-ar,.pv-anim.static .gm-arrow{opacity:1}
+@keyframes gm-draw{to{stroke-dashoffset:0}}
+@keyframes gm-gfade{to{opacity:.55}}
+@keyframes gm-fig{from{opacity:0;clip-path:inset(0 100% 0 0)}to{opacity:1;clip-path:inset(0 0 0 0)}}
+@keyframes gm-pop{from{transform:translateY(-70px) scale(.2);opacity:0}to{transform:none;opacity:1}}
+@keyframes gm-gh{to{fill-opacity:.2}}
+@keyframes gm-up{from{opacity:0;transform:translateY(26px)}to{opacity:1;transform:none}}
+@keyframes gm-wipe{from{opacity:0;transform:translateX(-40px)}to{opacity:1;transform:none}}
+@keyframes gm-arrow{0%{transform:translate(-395.6px,395.5px);opacity:0}3.5%{transform:translate(-395.6px,395.5px);opacity:1}5.83%{transform:translate(-395.6px,395.5px);animation-timing-function:cubic-bezier(.65,0,.25,1)}12.83%{transform:translate(-263.7px,263.7px)}15.74%{transform:translate(-263.7px,263.7px);animation-timing-function:cubic-bezier(.65,0,.25,1)}22.74%{transform:translate(-131.9px,131.8px)}25.66%{transform:translate(-131.9px,131.8px);animation-timing-function:cubic-bezier(.65,0,.25,1)}32.65%{transform:translate(0.0px,0.0px)}35.57%{transform:translate(0.0px,0.0px);animation-timing-function:cubic-bezier(.65,0,.25,1)}42.57%{transform:translate(133.0px,-133.1px)}45.48%{transform:translate(133.0px,-133.1px);animation-timing-function:cubic-bezier(.65,0,.25,1)}52.48%{transform:translate(266.1px,-266.2px)}55.39%{transform:translate(266.1px,-266.2px);animation-timing-function:cubic-bezier(.65,0,.25,1)}62.39%{transform:translate(399.2px,-399.3px)}65.31%{transform:translate(399.2px,-399.3px);animation-timing-function:cubic-bezier(.65,0,.25,1)}72.3%{transform:translate(532.3px,-532.3px)}76.68%{transform:translate(532.3px,-532.3px);animation-timing-function:cubic-bezier(.3,1.35,.45,1)}100%{transform:translate(0px,0px);opacity:1}}
+@media(prefers-reduced-motion:reduce){.pv-anim .gm-grid line{stroke-dashoffset:0;opacity:.3}.pv-anim .gm-gh{fill-opacity:.2}.pv-anim .gm-fig,.pv-anim .gm-l,.pv-anim .gm-ar,.pv-anim .gm-arrow{opacity:1}.pv-anim *{animation:none!important}}
