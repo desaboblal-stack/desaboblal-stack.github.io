@@ -456,3 +456,6 @@ footer{grid-template-columns:auto 1fr auto}
 .pv-more a:hover{color:var(--ink)}
 .seo-list{display:grid;gap:8px;padding:24px 0;list-style:none;margin:0}
 .seo-list a{color:var(--mute)}
+
+/* arrows: force text glyph on iOS */
+i{font-variant-emoji:text}
