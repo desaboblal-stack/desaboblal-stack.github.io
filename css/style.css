@@ -480,3 +480,13 @@ i{font-variant-emoji:text}
 .pv-pat.done .gm-hint{opacity:.5}
 
 .lg-co{font-style:normal;font-size:14px;color:var(--ink);letter-spacing:0;text-transform:none;opacity:.85;margin-inline-start:12px;padding-inline-start:12px;border-inline-start:1px solid var(--line)}
+
+/* logo captions: never break words — stack name over latin+country on narrow screens */
+.lg-c b,.lg-c i{white-space:nowrap}
+.lg-c b small{white-space:nowrap}
+@media(max-width:899px){
+  .lg-bc .lg-c{flex-direction:column;align-items:flex-start;gap:5px}
+  .lg-bc .lg-c b{max-width:100%}
+  .lg-bc .lg-c i{max-width:100%;overflow:hidden;text-overflow:ellipsis;font-size:11.5px;letter-spacing:.08em}
+  .lg-co{margin-inline-start:9px;padding-inline-start:9px;font-size:13px}
+}
