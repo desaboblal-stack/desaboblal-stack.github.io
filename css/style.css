@@ -526,3 +526,4 @@ i{font-variant-emoji:text}
   body.lock .hdr{position:fixed}
 }
 @media(max-width:899px){.nav .mnu{width:90px;padding:0 10px}}
+@media(hover:none),(max-width:699px){.sc-go{display:none!important}}
