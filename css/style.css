@@ -527,3 +527,9 @@ i{font-variant-emoji:text}
 }
 @media(max-width:899px){.nav .mnu{width:90px;padding:0 10px}}
 @media(hover:none),(max-width:699px){.sc-go{display:none!important}}
+
+/* iOS: animated scenes must never widen the page while shapes fly in from outside */
+.pv{overflow-x:hidden}
+.pv-anim,.pv-pat{overflow:hidden;contain:paint;-webkit-transform:translateZ(0);isolation:isolate}
+.pv-pat svg,.pv-anim svg{overflow:hidden;max-width:100%}
+html,body{overflow-x:clip}
