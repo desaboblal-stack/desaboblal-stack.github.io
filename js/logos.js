@@ -16,11 +16,6 @@ addEventListener("scroll",function(){
 },{passive:true});
 
 var B=window.LOGOS||[],flat=[],start=[];
-B.forEach(function(b,i){start[i]=flat.length;b.v.forEach(function(v){flat.push({f:v.f,n:b.n,e:b.e})})});
-var pad=function(n){return(n<10?"0":"")+n};
-var grid=$("#lgg");
-var n=$("#lgn");if(n)n.textContent="Logos · "+pad(B.length);
-
 /* flip squares: every brand is one square card; versions flip over on hover (auto on touch) */
 /* bento plan on a 3-column grid (RTL: column 1 is the right one).
    L = long+square, R = square+long, C = 3 squares, W = one wide card, A = tall card + 4 squares, B = 4 squares + tall card */
@@ -41,6 +36,24 @@ var BLOCKS=["L","C","A","W","R","C","B","W"],NEED={L:2,R:2,C:3,W:1,A:5,B:5},pos=
     i+=NEED[t];bi++;
   }
 })();
+/* brands with a textured/photo/gradient background always get a square card (no cropping);
+   only plain-background brands may take the wide/long/tall slots */
+(function(){
+  var plain=[],sq=[],out=[],pi=0,si=0;
+  B.forEach(function(b){(b.sq?sq:plain).push(b)});
+  pos.forEach(function(p){
+    var x;
+    if(p.k!=="S")x=pi<plain.length?plain[pi++]:sq[si++];
+    else x=si<sq.length?sq[si++]:plain[pi++];
+    out.push(x);
+  });
+  B=out;
+})();
+B.forEach(function(b,i){start[i]=flat.length;b.v.forEach(function(v){flat.push({f:v.f,n:b.n,e:b.e})})});
+var pad=function(n){return(n<10?"0":"")+n};
+var grid=$("#lgg");
+var n=$("#lgn");if(n)n.textContent="Logos · "+pad(B.length);
+
 var fine=matchMedia("(hover:hover) and (pointer:fine)").matches;
 var src=function(v,l){return "img/logos/"+v.f+(l?"":"-m")+".webp"};
 var cards=B.map(function(b,i){
