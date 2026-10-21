@@ -459,3 +459,7 @@ footer{grid-template-columns:auto 1fr auto}
 
 /* arrows: force text glyph on iOS */
 i{font-variant-emoji:text}
+
+/* mobile header: equal-width pills so both sit the same distance from the center logo; hide hero tagline on phones */
+@media(max-width:899px){.nav .cta,.nav .lang{box-sizing:border-box;width:112px;min-width:112px;height:40px;padding:0 10px;display:inline-flex;align-items:center;justify-content:center;gap:7px;white-space:nowrap}}
+@media(max-width:699px){.hero .label#hl{display:none}}
