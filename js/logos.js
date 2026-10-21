@@ -31,6 +31,7 @@ var BLOCKS=["L","C","A","W","R","C","B","W"],NEED={L:2,R:2,C:3,W:1,A:5,B:5},pos=
   while(i<n){
     var t=BLOCKS[bi%BLOCKS.length],left=n-i;
     if(left<NEED[t])t=left>=3?"C":left===2?"L":"W";
+    if(t==="W"&&left===2)t="L";
     if(t==="L"){add(1,r,2,1,"L");add(3,r,1,1,"S");r++}
     else if(t==="R"){add(1,r,1,1,"S");add(2,r,2,1,"R");r++}
     else if(t==="C"){add(1,r,1,1,"S");add(2,r,1,1,"S");add(3,r,1,1,"S");r++}
@@ -44,7 +45,7 @@ var fine=matchMedia("(hover:hover) and (pointer:fine)").matches;
 var src=function(v,l){return "img/logos/"+v.f+(l?"":"-m")+".webp"};
 var cards=B.map(function(b,i){
   var k=b.v.length,f=document.createElement("figure"),ps=pos[i],lo=false;f.className="lg-bc"+(ps.k==="T"?" lg-tall":ps.k==="W"?" lg-wide":ps.k==="S"?"":" lg-long");f.style.gridColumn=ps.c+(ps.cs>1?" / span "+ps.cs:"");f.style.gridRow=ps.r+(ps.rs>1?" / span "+ps.rs:"");
-  f.innerHTML='<div class="lg-fp" data-b="'+i+'" role="button" tabindex="0" aria-label="'+b.n+'"><div class="lg-fi"><img class="lg-fc fa" src="'+src(b.v[0],lo)+'" alt="شعار '+b.n+' — '+b.e+'" '+(i<3?'':'loading="lazy" ')+'decoding="async"><img class="lg-fc fb" src="'+src(b.v[k>1?1:0],lo)+'" alt="" aria-hidden="true" decoding="async"></div>'+(k>1?'<span class="lg-dots">'+b.v.map(function(_,j){return '<i'+(j?'':' class="on"')+'></i>'}).join("")+'</span>':'')+'</div><figcaption class="lg-c"><b>'+b.n+(k>1?'<small>'+k+(k>2&&k<11?' نسخ':' نسخة')+'</small>':'')+'</b><i>'+b.e+'</i></figcaption>';
+  f.innerHTML='<div class="lg-fp" data-b="'+i+'" role="button" tabindex="0" aria-label="'+b.n+'"><div class="lg-fi"><img class="lg-fc fa" src="'+src(b.v[0],lo)+'" alt="شعار '+b.n+' — '+b.e+'" '+(i<3?'':'loading="lazy" ')+'decoding="async"><img class="lg-fc fb" src="'+src(b.v[k>1?1:0],lo)+'" alt="" aria-hidden="true" decoding="async"></div>'+(k>1?'<span class="lg-dots">'+b.v.map(function(_,j){return '<i'+(j?'':' class="on"')+'></i>'}).join("")+'</span>':'')+'</div><figcaption class="lg-c"><b>'+b.n+(k>1?'<small>'+k+(k>2&&k<11?' نسخ':' نسخة')+'</small>':'')+'</b><i>'+b.e+(b.co?'<em class="lg-co">'+b.co+'</em>':'')+'</i></figcaption>';
   grid.appendChild(f);f.querySelector(".lg-fp").style.backgroundColor=b.v[0].c;
   var st={b:i,vi:0,rot:0,t:0,lo:lo,el:f.querySelector(".lg-fp")};
   st.fi=st.el.querySelector(".lg-fi");st.dots=st.el.querySelectorAll(".lg-dots i");

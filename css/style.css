@@ -478,3 +478,5 @@ i{font-variant-emoji:text}
 .pv-pat .pt-s polygon{fill:#912037}
 .pv-pat .gm-hint{color:#912037}
 .pv-pat.done .gm-hint{opacity:.5}
+
+.lg-co{font-style:normal;font-size:14px;color:var(--ink);letter-spacing:0;text-transform:none;opacity:.85;margin-inline-start:12px;padding-inline-start:12px;border-inline-start:1px solid var(--line)}
