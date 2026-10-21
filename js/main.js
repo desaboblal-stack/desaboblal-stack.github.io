@@ -379,8 +379,5 @@ document.addEventListener("keydown",function(e){if(e.key==="Escape")set(false)})
   });
 })();
 
-/* home: logos index (auto-built from LOGOS) */
-(function(){var L=window.LOGOS,ol=document.getElementById("lgl");if(!L||!ol)return;
-var n=document.getElementById("lgn");if(n)n.textContent="Logos · "+(L.length<10?"0":"")+L.length;
-ol.innerHTML=L.map(function(b){return '<li><a href="logos.html"><b>'+b.n+'</b><em>'+b.e+(b.co?' · '+b.co:'')+'</em></a></li>'}).join("");
-if(L.length%2)ol.classList.add("odd")})();
+/* home: logos count */
+(function(){var L=window.LOGOS,n=document.getElementById("lgn");if(L&&n)n.textContent="Logos · "+(L.length<10?"0":"")+L.length})();
