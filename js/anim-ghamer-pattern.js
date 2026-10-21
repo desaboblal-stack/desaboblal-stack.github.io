@@ -15,9 +15,10 @@ window.ANIM_RUN=function(root){
   var dmin=Math.min.apply(null,S.map(function(s){return s._d})),dmax=Math.max.apply(null,S.map(function(s){return s._d}));
   var tl=gsap.timeline({paused:true,onComplete:function(){el.classList.add("done");ripple.play(0)}});
   var ripple=gsap.timeline({paused:true,repeat:-1,repeatDelay:2.6});
-  S.forEach(function(s){var t=(s._d-dmin)*.09;
-    tl.fromTo(s,{x:s._x-300,y:s._y+300,opacity:0},{x:s._x,y:s._y,opacity:1,duration:1.9,ease:"expo.out"},t);
-    tl.fromTo(s._b,{scaleX:1.9,transformOrigin:"0 0"},{scaleX:1,duration:1.5,ease:"power3.out"},t);
+  S.forEach(function(s){var t=(s._d-dmin)*.06;
+    tl.fromTo(s,{x:s._x-560,y:s._y+560,opacity:0},{x:s._x,y:s._y,duration:1.35,ease:"expo.out"},t);
+    tl.fromTo(s,{opacity:0},{opacity:1,duration:.12,ease:"none"},t);
+    tl.fromTo(s._b,{scaleX:3.2,transformOrigin:"0 0"},{scaleX:1,duration:1.2,ease:"expo.out"},t);
     ripple.to(s,{x:s._x+22,y:s._y-22,duration:.9,ease:"power3.inOut",yoyo:true,repeat:1},(s._d-dmin)*.07)});
   tl.fromTo(svg,{rotationX:12,rotationY:-9,y:24,transformOrigin:"50% 50%"},{rotationX:0,rotationY:0,y:0,duration:4,ease:"expo.out"},0);
   tl.fromTo(el.querySelector(".pt-cam"),{scale:1.08,svgOrigin:"750 422"},{scale:1,svgOrigin:"750 422",duration:6,ease:"power3.out"},0);
