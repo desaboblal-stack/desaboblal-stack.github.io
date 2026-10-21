@@ -100,7 +100,7 @@ function build(s){
   '<dl class="pv-meta"><div><dt class="label">الخدمات</dt><dd>'+p.srv+'</dd></div><div><dt class="label">المجال</dt><dd>'+p.sec+'</dd></div>'+(p.co?'<div><dt class="label">الدولة</dt><dd>'+p.co+'</dd></div>':'')+'</dl></div></div>'+
   '<div class="pv-imgs">'+(window.ANIM&&ANIM[s]?ANIM[s]():"");
   var gr=G[s]||[],gf={},gm={};gr.forEach(function(g){gf[g[0]]=g;g.forEach(function(k){gm[k]=1})});
-  function fig(k,st){return '<figure class="pv-f"'+(st?' style="flex:'+(1500/SZ[s][k-1]).toFixed(3)+' 1 0"':'')+'>'+img(k,0)+'<figcaption><span>'+pad(k)+'</span><span class="pv-fn">'+p.en+'</span></figcaption></figure>'}
+  function fig(k,st){return '<figure class="pv-f"'+(st?' style="flex:'+(1500/SZ[s][k-1]).toFixed(3)+' 1 0"':'')+'>'+(window.ANIM_FIG&&ANIM_FIG[s]&&ANIM_FIG[s][k]?ANIM_FIG[s][k]:img(k,0))+'<figcaption><span>'+pad(k)+'</span><span class="pv-fn">'+p.en+'</span></figcaption></figure>'}
   for(var k=2;k<=n;k++){
     if(gf[k])h+='<div class="pv-row">'+gf[k].map(function(j){return fig(j,1)}).join("")+'</div>';
     else if(!gm[k])h+=fig(k,0);

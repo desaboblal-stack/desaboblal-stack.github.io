@@ -473,3 +473,8 @@ i{font-variant-emoji:text}
 .gm-arrow{fill:#fff;filter:drop-shadow(0 0 12px rgba(255,255,255,.3))}
 .gm-hint{position:absolute;inset-inline-end:14px;bottom:10px;font:500 11px/1 var(--lat);letter-spacing:.14em;color:#f7efe8;opacity:0;transition:opacity .5s;pointer-events:none}
 .pv-anim.done .gm-hint{opacity:.55}
+
+.pv-pat{width:100%;margin:0;background:#f7efe8;border-radius:clamp(12px,1.6vw,26px)}
+.pv-pat .pt-s polygon{fill:#912037}
+.pv-pat .gm-hint{color:#912037}
+.pv-pat.done .gm-hint{opacity:.5}
