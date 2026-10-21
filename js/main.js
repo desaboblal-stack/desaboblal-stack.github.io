@@ -147,7 +147,7 @@ pv.addEventListener("click",function(e){
     return;
   }
   var g=t.closest("[data-go]");
-  if(g){location.hash="#work/"+g.dataset.go;return}
+  if(g){history.replaceState(null,"","#work/"+g.dataset.go);route();return}
   if(t.tagName==="IMG"&&t.dataset.full){
     lbi.src=t.currentSrc||t.src;           /* show what is loaded instantly… */
     lb.classList.add("open","fit");
