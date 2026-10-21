@@ -34,7 +34,7 @@ aldeyafa:{cv:"img/aldeyafa/09-m.webp",big:"img/aldeyafa/09-l.webp",col:["#c2501c
 intelligence:{cv:"img/intelligence/01-m.webp",big:"img/intelligence/01-l.webp",col:["#4f1022","#c9a67a","#f1e6d0"],tags:["هوية بصرية","شعار","مطبوعات مؤسسية","رول أب"]},
 blueline:{cv:"img/blueline/07-m.webp",big:"img/blueline/07-l.webp",col:["#0b3fd2","#ffffff","#0a1a4f"],tags:["هوية بصرية","شعار","باترن","مطبوعات مؤسسية"]},
 khyoot:{cv:"img/khyoot/09-m.webp",big:"img/khyoot/09-l.webp",col:["#eee5d8","#141210","#c9b79c"],tags:["شعار","تغليف","باترن"]},
-ghamer:{cv:"img/ghamer/10-m.webp",big:"img/ghamer/10-l.webp",col:["#8e1f38","#f7efe8","#111111"],tags:["هوية بصرية","شعار","باترن","فلسفة الشعار"]},
+ghamer:{cv:"img/ghamer/03-m.webp",big:"img/ghamer/03-l.webp",col:["#8e1f38","#f7efe8","#111111"],tags:["هوية بصرية","شعار","باترن","فلسفة الشعار"]},
 mostafa:{cv:"img/mostafa/08-m.webp",big:"img/mostafa/08-l.webp",col:["#141414","#efeeeb","#d9a55b"],tags:["شعار","تصميم اللافتات","فلسفة الشعار"]},
 adilbey:{cv:"img/adilbey/05-m.webp",big:"img/adilbey/05-l.webp",col:["#24502a","#ffffff","#b08a3c"],tags:["هوية بصرية","شعار","ملصقات المنتجات","مطبوعات مؤسسية"]},
 myvet:{cv:"img/myvet/cover-m.webp",big:"img/myvet/cover-l.webp",col:["#d93a35","#ffffff","#2b2b2b"],tags:["هوية بصرية","شعار","دليل الهوية","مطبوعات مؤسسية"]},
