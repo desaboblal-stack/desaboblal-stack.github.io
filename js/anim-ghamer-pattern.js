@@ -15,9 +15,10 @@ window.ANIM_RUN=function(root){
   var dmin=Math.min.apply(null,S.map(function(s){return s._d})),dmax=Math.max.apply(null,S.map(function(s){return s._d}));
   var tl=gsap.timeline({paused:true,onComplete:function(){el.classList.add("done");ripple.play(0)}});
   var ripple=gsap.timeline({paused:true,repeat:-1,repeatDelay:2.6});
-  /* rows start one after another from the bottom up; inside each row the arrows launch one behind the other along the diagonal */
-  var jmax=Math.max.apply(null,S.map(function(s){return +s.dataset.j})),imax=Math.max.apply(null,S.map(function(s){return +s.dataset.i}));
-  S.forEach(function(s){var t=(jmax-(+s.dataset.j))*.34+(imax-(+s.dataset.i))*.085;
+  /* diagonal rows start one after another; inside each row the arrows launch one behind the other, farthest first */
+  var lanes={};S.forEach(function(s){var L=(+s.dataset.i)+(+s.dataset.j);s._l=L;lanes[L]=Math.max(lanes[L]==null?-99:lanes[L],+s.dataset.i)});
+  var lmax=Math.max.apply(null,S.map(function(s){return s._l}));
+  S.forEach(function(s){var t=(lmax-s._l)*.3+(lanes[s._l]-(+s.dataset.i))*.09;
     tl.fromTo(s,{x:s._x-700,y:s._y+700},{x:s._x,y:s._y,duration:1.5,ease:"expo.out"},t);
     tl.fromTo(s,{opacity:0},{opacity:1,duration:.05,ease:"none"},t);
     tl.fromTo(s._b,{scaleX:3.6,transformOrigin:"0 0"},{scaleX:1,duration:1.3,ease:"expo.out"},t);
