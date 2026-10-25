@@ -1,7 +1,7 @@
 (function(){
 "use strict";
 var P={
-datapill:{co:"",t:"Data Pill",en:"Data Pill",srv:"Visual Identity & Logo",sec:"Data & tech career academy",
+datapill:{co:"Egypt",t:"Data Pill",en:"Data Pill",srv:"Visual Identity & Logo",sec:"Data & tech career academy",
 d:"Visual identity for the “Data Pill” academy, which teaches data skills and gets learners hired, under the line “Learn. Build. Get Hired.” A geometric wordmark with custom-drawn letters and a clear digital character, strong enough to stand without an icon, with a D symbol drawn from it for apps. In a gradient of violet and electric blue over deep indigo, the identity extends to billboards, an event hall, social media posters, a tote bag, a mobile app and the website."},
 alomar:{co:"Egypt",t:"Al Omar Law Firm",en:"Al Omar Law Firm",srv:"Visual Identity & Logo",sec:"Law firm & legal consultancy",
 d:"A complete visual identity for Al Omar Law & Legal Consultancy. The logo brings together the Roman column, a symbol of law and the court, and the pans of the scales, a symbol of justice, with the word “Al” set inside a composed square. The column repeats as an ornament that runs across the printed collateral."},
@@ -47,7 +47,7 @@ akif:{cv:"../img/akif/05-m.webp",big:"../img/akif/05-l.webp",col:["#080650","#2b
 };
 /* rows of images shown side by side inside a project page (1-based image numbers) */
 var G={mushaf:[[2,3],[4,5],[6,7],[8,9],[10,11,12],[13,14],[15,16],[17,18],[19,20],[21,22],[24,25,26],[27,28,29],[30,31],[34,35],[36,37],[39,40],[42,43],[44,45]]};
-var ORDER=["datapill","mushaf","alomar","aldeyafa","ghamer","intelligence","blueline","mostafa","besler","khyoot","adilbey","myvet","akif"];
+var ORDER=["mushaf","alomar","aldeyafa","ghamer","datapill","intelligence","blueline","mostafa","besler","khyoot","adilbey","myvet","akif"];
 var $=function(s,r){return (r||document).querySelector(s)};
 var pv=$("#pv"),lb=$("#lb"),lbi=$("img",lb),cur=null;
 

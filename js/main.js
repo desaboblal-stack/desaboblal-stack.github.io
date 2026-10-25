@@ -1,7 +1,7 @@
 (function(){
 "use strict";
 var P={
-datapill:{co:"",t:"داتا بيل",en:"Data Pill",srv:"هوية بصرية وشعار",sec:"أكاديمية البيانات والمسارات المهنية",
+datapill:{co:"مصر",t:"داتا بيل",en:"Data Pill",srv:"هوية بصرية وشعار",sec:"أكاديمية البيانات والمسارات المهنية",
 d:"هوية بصرية لأكاديمية «Data Pill» لتعليم البيانات والتوظيف، تحت شعار «Learn. Build. Get Hired». شعار كتابي هندسي بحروف مصمَّمة خصيصًا يحمل طابعًا رقميًا واضحًا ويقف وحده دون أيقونة، مع رمز D مستخلص منه للتطبيقات. بتدرّج البنفسجي والأزرق الكهربائي على النيلي العميق، وتمتد الهوية إلى اللوحات الإعلانية وقاعة الفعاليات وبوسترات السوشيال ميديا والحقيبة وتطبيق الجوال والموقع."},
 alomar:{co:"مصر",t:"آل عمر للمحاماة",en:"Al Omar Law Firm",srv:"هوية بصرية وشعار",sec:"مكتب محاماة واستشارات قانونية",
 d:"هوية بصرية متكاملة لمكتب «آل عمر للمحاماة والاستشارات القانونية». يجمع الشعار بين العمود الروماني رمزًا للقانون والمحكمة، وكفتي الميزان رمزًا للعدل، وكلمة «آل» داخل تكوين مربع رصين. ويتكرر العمود زخرفةً تمتد على المطبوعات."},
@@ -47,7 +47,7 @@ akif:{cv:"img/akif/05-m.webp",big:"img/akif/05-l.webp",col:["#080650","#2bd1c6",
 };
 /* rows of images shown side by side inside a project page (1-based image numbers) */
 var G={mushaf:[[2,3],[4,5],[6,7],[8,9],[10,11,12],[13,14],[15,16],[17,18],[19,20],[21,22],[24,25,26],[27,28,29],[30,31],[34,35],[36,37],[39,40],[42,43],[44,45]]};
-var ORDER=["datapill","mushaf","alomar","aldeyafa","ghamer","intelligence","blueline","mostafa","besler","khyoot","adilbey","myvet","akif"];
+var ORDER=["mushaf","alomar","aldeyafa","ghamer","datapill","intelligence","blueline","mostafa","besler","khyoot","adilbey","myvet","akif"];
 var $=function(s,r){return (r||document).querySelector(s)};
 var pv=$("#pv"),lb=$("#lb"),lbi=$("img",lb),cur=null;
 

@@ -1,7 +1,7 @@
 (function(){
 "use strict";
 var P={
-datapill:{co:"",t:"Data Pill",en:"Data Pill",srv:"Görsel Kimlik ve Logo",sec:"Veri ve kariyer akademisi",
+datapill:{co:"Mısır",t:"Data Pill",en:"Data Pill",srv:"Görsel Kimlik ve Logo",sec:"Veri ve kariyer akademisi",
 d:"“Data Pill” veri akademisi için görsel kimlik; “Learn. Build. Get Hired.” sloganıyla öğrencileri veri becerileriyle işe hazırlar. Özel çizilmiş harflerden oluşan geometrik bir yazı logosu; dijital karakteri net, ikon olmadan da tek başına duran bir yapı. Uygulamalar için ondan türetilmiş bir D simgesi de var. Derin lacivert üzerinde mor ve elektrik mavisi geçişiyle kimlik; billboardlara, etkinlik salonuna, sosyal medya posterlerine, bez çantaya, mobil uygulamaya ve web sitesine uzanıyor."},
 alomar:{co:"Mısır",t:"Al Omar Hukuk Bürosu",en:"Al Omar Law Firm",srv:"Görsel Kimlik ve Logo",sec:"Hukuk bürosu ve hukuki danışmanlık",
 d:"Al Omar Hukuk ve Hukuki Danışmanlık bürosu için bütünsel bir görsel kimlik. Logo; hukuku ve mahkemeyi simgeleyen Roma sütunu ile adaleti simgeleyen terazi kefelerini, sağlam kurulmuş bir kare içinde “Al” sözcüğüyle birleştirir. Sütun, basılı materyaller boyunca uzanan bir süsleme olarak tekrar eder."},
@@ -47,7 +47,7 @@ akif:{cv:"../img/akif/05-m.webp",big:"../img/akif/05-l.webp",col:["#080650","#2b
 };
 /* rows of images shown side by side inside a project page (1-based image numbers) */
 var G={mushaf:[[2,3],[4,5],[6,7],[8,9],[10,11,12],[13,14],[15,16],[17,18],[19,20],[21,22],[24,25,26],[27,28,29],[30,31],[34,35],[36,37],[39,40],[42,43],[44,45]]};
-var ORDER=["datapill","mushaf","alomar","aldeyafa","ghamer","intelligence","blueline","mostafa","besler","khyoot","adilbey","myvet","akif"];
+var ORDER=["mushaf","alomar","aldeyafa","ghamer","datapill","intelligence","blueline","mostafa","besler","khyoot","adilbey","myvet","akif"];
 var $=function(s,r){return (r||document).querySelector(s)};
 var pv=$("#pv"),lb=$("#lb"),lbi=$("img",lb),cur=null;
 
