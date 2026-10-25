@@ -577,4 +577,4 @@ html[dir=ltr] .xp-d{text-align:left}
 html[dir=ltr] .pv-pg{transform-origin:left center}
 .lang-m a{opacity:1}
 html[lang=tr] .nav{font-size:13px;gap:clamp(8px,.8vw,12px)}
-html[lang=tr] .hero h1{text-transform:uppercase}
+html[lang=tr] .hero h1,html[lang=en] .hero h1{text-transform:uppercase}
