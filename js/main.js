@@ -1,6 +1,8 @@
 (function(){
 "use strict";
 var P={
+datapill:{co:"",t:"داتا بيل",en:"Data Pill",srv:"هوية بصرية وشعار",sec:"أكاديمية البيانات والمسارات المهنية",
+d:"هوية بصرية لأكاديمية «Data Pill» لتعليم البيانات والتوظيف، تحت شعار «Learn. Build. Get Hired». شعار كتابي هندسي بحروف مصمَّمة خصيصًا يحمل طابعًا رقميًا واضحًا ويقف وحده دون أيقونة، مع رمز D مستخلص منه للتطبيقات. بتدرّج البنفسجي والأزرق الكهربائي على النيلي العميق، وتمتد الهوية إلى اللوحات الإعلانية وقاعة الفعاليات وبوسترات السوشيال ميديا والحقيبة وتطبيق الجوال والموقع."},
 alomar:{co:"مصر",t:"آل عمر للمحاماة",en:"Al Omar Law Firm",srv:"هوية بصرية وشعار",sec:"مكتب محاماة واستشارات قانونية",
 d:"هوية بصرية متكاملة لمكتب «آل عمر للمحاماة والاستشارات القانونية». يجمع الشعار بين العمود الروماني رمزًا للقانون والمحكمة، وكفتي الميزان رمزًا للعدل، وكلمة «آل» داخل تكوين مربع رصين. ويتكرر العمود زخرفةً تمتد على المطبوعات."},
 aldeyafa:{co:"سوريا",t:"الضيافة",en:"Aldeyafa",srv:"هوية بصرية وتغليف",sec:"قهوة وضيافة عربية",
@@ -29,6 +31,7 @@ d:"هوية عيادة د. عاكف يولداش للأسنان: ابتسامة 
 /* ── Add a project: 1) put images in img/<slug>/ (NN.webp, NN-l.webp, NN-m.webp), 2) add its heights to js/sizes.js,
    3) add an entry to P (text) and X (cover + tags). Order of ORDER = order on the site. ── */
 var X={
+datapill:{cv:"img/datapill/01-m.webp",big:"img/datapill/01-l.webp",col:["#9666f7","#447ef6","#1a1830"],tags:["هوية بصرية","شعار","سوشيال ميديا","واجهات موقع"]},
 alomar:{cv:"img/alomar/01-m.webp",big:"img/alomar/01-l.webp",col:["#98693f","#c9a15d","#fff3e2"],tags:["هوية بصرية","شعار","مطبوعات مؤسسية","ختم","تصميم اللافتات"]},
 aldeyafa:{cv:"img/aldeyafa/09-m.webp",big:"img/aldeyafa/09-l.webp",col:["#c2501c","#2a1a12","#f1e6d0"],tags:["هوية بصرية","تغليف","باترن","اتجاه بصري"]},
 intelligence:{cv:"img/intelligence/01-m.webp",big:"img/intelligence/01-l.webp",col:["#4f1022","#c9a67a","#f1e6d0"],tags:["هوية بصرية","شعار","مطبوعات مؤسسية","رول أب"]},
@@ -44,7 +47,7 @@ akif:{cv:"img/akif/05-m.webp",big:"img/akif/05-l.webp",col:["#080650","#2bd1c6",
 };
 /* rows of images shown side by side inside a project page (1-based image numbers) */
 var G={mushaf:[[2,3],[4,5],[6,7],[8,9],[10,11,12],[13,14],[15,16],[17,18],[19,20],[21,22],[24,25,26],[27,28,29],[30,31],[34,35],[36,37],[39,40],[42,43],[44,45]]};
-var ORDER=["mushaf","alomar","aldeyafa","ghamer","intelligence","blueline","mostafa","besler","khyoot","adilbey","myvet","akif"];
+var ORDER=["datapill","mushaf","alomar","aldeyafa","ghamer","intelligence","blueline","mostafa","besler","khyoot","adilbey","myvet","akif"];
 var $=function(s,r){return (r||document).querySelector(s)};
 var pv=$("#pv"),lb=$("#lb"),lbi=$("img",lb),cur=null;
 

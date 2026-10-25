@@ -1,6 +1,8 @@
 (function(){
 "use strict";
 var P={
+datapill:{co:"",t:"Data Pill",en:"Data Pill",srv:"Visual Identity & Logo",sec:"Data & tech career academy",
+d:"Visual identity for the “Data Pill” academy, which teaches data skills and gets learners hired, under the line “Learn. Build. Get Hired.” A geometric wordmark with custom-drawn letters and a clear digital character, strong enough to stand without an icon, with a D symbol drawn from it for apps. In a gradient of violet and electric blue over deep indigo, the identity extends to billboards, an event hall, social media posters, a tote bag, a mobile app and the website."},
 alomar:{co:"Egypt",t:"Al Omar Law Firm",en:"Al Omar Law Firm",srv:"Visual Identity & Logo",sec:"Law firm & legal consultancy",
 d:"A complete visual identity for Al Omar Law & Legal Consultancy. The logo brings together the Roman column, a symbol of law and the court, and the pans of the scales, a symbol of justice, with the word “Al” set inside a composed square. The column repeats as an ornament that runs across the printed collateral."},
 aldeyafa:{co:"Syria",t:"Aldeyafa",en:"Aldeyafa",srv:"Visual Identity & Packaging",sec:"Arabic coffee & hospitality",
@@ -29,6 +31,7 @@ d:"The identity of Dt. Akif Yuldaş’s dental clinic: a smile that cradles a to
 /* ── Add a project: 1) put images in img/<slug>/ (NN.webp, NN-l.webp, NN-m.webp), 2) add its heights to js/sizes.js,
    3) add an entry to P (text) and X (cover + tags). Order of ORDER = order on the site. ── */
 var X={
+datapill:{cv:"../img/datapill/01-m.webp",big:"../img/datapill/01-l.webp",col:["#9666f7","#447ef6","#1a1830"],tags:["Visual Identity","Logo","Social Media","Website Interfaces"]},
 alomar:{cv:"../img/alomar/01-m.webp",big:"../img/alomar/01-l.webp",col:["#98693f","#c9a15d","#fff3e2"],tags:["Visual Identity","Logo","Corporate Stationery","Stamp","Signage Design"]},
 aldeyafa:{cv:"../img/aldeyafa/09-m.webp",big:"../img/aldeyafa/09-l.webp",col:["#c2501c","#2a1a12","#f1e6d0"],tags:["Visual Identity","Packaging","Pattern","Art Direction"]},
 intelligence:{cv:"../img/intelligence/01-m.webp",big:"../img/intelligence/01-l.webp",col:["#4f1022","#c9a67a","#f1e6d0"],tags:["Visual Identity","Logo","Corporate Stationery","Roll-up Banner"]},
@@ -44,7 +47,7 @@ akif:{cv:"../img/akif/05-m.webp",big:"../img/akif/05-l.webp",col:["#080650","#2b
 };
 /* rows of images shown side by side inside a project page (1-based image numbers) */
 var G={mushaf:[[2,3],[4,5],[6,7],[8,9],[10,11,12],[13,14],[15,16],[17,18],[19,20],[21,22],[24,25,26],[27,28,29],[30,31],[34,35],[36,37],[39,40],[42,43],[44,45]]};
-var ORDER=["mushaf","alomar","aldeyafa","ghamer","intelligence","blueline","mostafa","besler","khyoot","adilbey","myvet","akif"];
+var ORDER=["datapill","mushaf","alomar","aldeyafa","ghamer","intelligence","blueline","mostafa","besler","khyoot","adilbey","myvet","akif"];
 var $=function(s,r){return (r||document).querySelector(s)};
 var pv=$("#pv"),lb=$("#lb"),lbi=$("img",lb),cur=null;
 
