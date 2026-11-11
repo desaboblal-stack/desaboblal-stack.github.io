@@ -112,10 +112,16 @@ function build(s){
   return h;
 }
 
+var pvLast=null,pvIn=false;
+/* leave the overlay: go back only if it was opened from inside the site, never out of it */
+function pvExit(){if(pvIn&&/^#work/.test(location.hash)){pvIn=false;history.back()}else{pvIn=false;history.replaceState(null,"","#works");close()}}
+function pvBg(on){[].forEach.call(document.querySelectorAll("#hdr,main,footer"),function(el){if(on)el.setAttribute("inert","");else el.removeAttribute("inert")})}
 function open(s,push){
   if(!P[s])return;
+  if(!cur)pvLast=document.activeElement;
   cur=s;pv.innerHTML=build(s);pv.scrollTop=0;
   pv.classList.add("open");document.body.classList.add("lock");
+  pvBg(true);var px=pv.querySelector(".pv-x");if(px)try{px.focus({preventScroll:true})}catch(e){}
   pv.querySelectorAll(".pv-hero img,.pv-imgs img").forEach(function(im){
     if(im.complete)im.classList.add("ok");else im.addEventListener("load",function(){im.classList.add("ok")},{once:true});
   });
@@ -133,6 +139,7 @@ function open(s,push){
 }
 function close(){
   pv.classList.remove("open");document.body.classList.remove("lock");cur=null;
+  pvBg(false);if(pvLast&&pvLast.focus&&document.contains(pvLast))try{pvLast.focus({preventScroll:true})}catch(e){}pvLast=null;
   document.title="Abdullah Hamed — Visual Identity Designer";
   setTimeout(function(){if(!cur)pv.innerHTML=""},520);
 }
@@ -146,7 +153,7 @@ route();
 pv.addEventListener("click",function(e){
   var t=e.target;
   if(t.closest("[data-close]")){
-    if(history.length>1&&/^#work/.test(location.hash))history.back();else{history.replaceState(null,"","#works");close()}
+    pvExit();
     return;
   }
   var g=t.closest("[data-go]");
@@ -165,7 +172,7 @@ lb.addEventListener("click",function(e){
 addEventListener("keydown",function(e){
   if(e.key!=="Escape")return;
   if(lb.classList.contains("open")){lb.classList.remove("open","fit")}
-  else if(cur){if(/^#work/.test(location.hash))history.back();else close()}
+  else if(cur)pvExit()
 });
 var cp=document.querySelector("[data-copy]");
 if(cp)cp.addEventListener("click",function(){
@@ -378,7 +385,7 @@ document.addEventListener("keydown",function(e){if(e.key==="Escape")set(false)})
   w.addEventListener("click",function(e){
     if(e.defaultPrevented||e.button||e.metaKey||e.ctrlKey||e.shiftKey||e.altKey)return;
     var a=e.target.closest&&e.target.closest("a[data-p]");if(!a)return;
-    e.preventDefault();location.hash="#work/"+a.dataset.p;
+    e.preventDefault();pvIn=true;location.hash="#work/"+a.dataset.p;
   });
 })();
 
